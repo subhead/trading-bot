@@ -2,7 +2,7 @@ from poloniex import poloniex
 
 class BotChart(object):
 	def __init__(self, exchange, pair, period):
-		self.conn = poloniex('key goes here','key goes here')
+		self.conn = poloniex('key goes here','Secret goes here')
 
 		self.pair = pair
 		self.period = period
