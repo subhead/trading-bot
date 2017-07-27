@@ -23,8 +23,8 @@ class BotIndicators(object):
 	return a
 
 	def MACD(self, prices, nslow=26, nfast=12):
-		emaslow = EMA(prices, nslow)
-		emafast = EMA(prices, nfast)
+		emaslow = self.EMA(prices, nslow)
+		emafast = self.EMA(prices, nfast)
 	return emaslow, emafast, emafast - emaslow		
 
 	def RSI (self, prices, period=14):
