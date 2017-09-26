@@ -14,7 +14,6 @@ class BotStrategy(object):
 		self.indicators = BotIndicators()
 
 	def tick(self,candlestick):
-		print candlestick.priceAverage
 		self.currentPrice = float(candlestick.priceAverage)
 		self.prices.append(self.currentPrice)
 		

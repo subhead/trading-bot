@@ -4,16 +4,16 @@ import time
 from botlog import BotLog
 
 class BotCandlestick(object):
-	def __init__(self, period=300):
+	def __init__(self, period=300,open=None,close=None,high=None,low=None,priceAverage=None):
 		self.current = None
-		self.open = None
-		self.close = None
-		self.high = None
-		self.low = None
+		self.open = open
+		self.close = close
+		self.high = high
+		self.low = low
 		self.startTime = time.time()
 		self.period = period
 		self.output = BotLog()
-		self.priceAverage = None
+		self.priceAverage = priceAverage
 
 	def tick(self,price):
 		self.current = float(price)
