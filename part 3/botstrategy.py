@@ -14,13 +14,13 @@ class BotStrategy(object):
 		self.indicators = BotIndicators()
 
 	def tick(self,candlestick):
-		self.currentPrice = float(candlestick['weightedAverage'])
+		self.currentPrice = float(candlestick.priceAverage)
 		self.prices.append(self.currentPrice)
 		
-		self.currentClose = float(candlestick['close'])
-		self.closes.append(self.currentClose)
+		#self.currentClose = float(candlestick['close'])
+		#self.closes.append(self.currentClose)
 		
-		self.output.log("Price: "+str(candlestick['weightedAverage'])+"\tMoving Average: "+str(self.indicators.movingAverage(self.prices,15)))
+		self.output.log("Price: "+str(candlestick.priceAverage)+"\tMoving Average: "+str(self.indicators.movingAverage(self.prices,15)))
 
 		self.evaluatePositions()
 		self.updateOpenTrades()
